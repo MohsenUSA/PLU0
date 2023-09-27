@@ -2,115 +2,12 @@
 <html>
   <head>
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
-    <title>CSS Card Flip</title>
-    <style>
-      body {
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column; 
-}
-
-.card-container {
-  flex: 1;
-  display: flex;
-  flex-wrap: wrap;
-  justify-content: center;
-}
-
-      .card {
-        position: relative;
-        min-width: 250px;
-        width: calc(33% - 20px);
-        max-width: 300px;
-        height: 320px;
-        background: none;
-        border-radius: 10px;
-        margin: 10px;
-        transform-style: preserve-3d;
-        transition: all 0.8s ease;
-      }
-
-      .card #thecard {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        transform-style: preserve-3d;
-        transition: all 0.8s ease;
-      }
-
-      .card .flipper {
-        transform: rotateY(180deg);
-      }
-
-      .card .thefront,
-      .card .theback {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        backface-visibility: hidden;
-        overflow: hidden;
-      }
-
-      .card .thefront {
-        background: #ffc728;
-        color: #000;
-      }
-
-      .card .theback {
-        background: #fafafa;
-        color: #333;
-        text-align: center;
-        transform: rotateY(180deg);
-      }
-
-      .card .thefront h1,
-      .card .theback h1,
-      .card .thefront p,
-      .card .theback p {
-        font-family: 'zilla slab', sans-serif;
-        padding: 10px 20px;
-        text-align: center;
-      }
-
-      /* Default Styles */
-.card {
-  flex-basis: 300px;
-  max-width: 300px; 
-}
-
-/* Tablet Styles */
-@media (max-width: 1000px) {
-  .card {
-    flex-basis: calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
-} 
-
-/* Mobile Styles */  
-@media (max-width: 600px) {
-  .card {
-    flex-basis: calc(50% - 20px);
-    max-width: calc(50% - 20px);
-  }
-}
-
-/* Small Mobile Styles */
-@media (max-width: 480px) {
-  .card {
-    flex-basis: 100%;
-    max-width: 100%;
-  }
-}
-    </style>
+    <title>Product Look Up</title>
+    <link rel="stylesheet" href="./styles.css">
   </head>
 
   <body>
+    <script src="./index.js"></script>
     <div class="card-container">
       <div class="card" onclick="myFlipFunction(this)">
         <div id="thecard">
@@ -119,10 +16,9 @@
             <p>Additional information for card 1.</p>
           </div>
           <div class="theback">
-            <h1>Back of Card 1</h1>
-            <p>Terms and conditions for card 1.</p>
-            <button>Submit</button>
-          </div>
+            <h1>Barcode</h1>
+            <svg id="barcode1"></svg>
+          </div>          
         </div>
       </div>
 
@@ -133,9 +29,8 @@
             <p>Additional information for card 2.</p>
           </div>
           <div class="theback">
-            <h1>Back of Card 2</h1>
-            <p>Terms and conditions for card 2.</p>
-            <button>Submit</button>
+            <h1>Barcode</h1>
+            <svg id="barcode2"></svg>
           </div>
         </div>
       </div>
@@ -147,9 +42,8 @@
             <p>Additional information for card 3.</p>
           </div>
           <div class="theback">
-            <h1>Back of Card 3</h1>
-            <p>Terms and conditions for card 3.</p>
-            <button>Submit</button>
+            <h1>Barcode</h1>
+            <svg id="barcode3"></svg>
           </div>
         </div>
       </div>
@@ -161,9 +55,8 @@
             <p>Additional information for card 4.</p>
           </div>
           <div class="theback">
-            <h1>Back of Card 4</h1>
-            <p>Terms and conditions for card 4.</p>
-            <button>Submit</button>
+            <h1>Barcode</h1>
+            <svg id="barcode4"></svg>
           </div>
         </div>
       </div>
@@ -175,9 +68,8 @@
             <p>Additional information for card 5.</p>
           </div>
           <div class="theback">
-            <h1>Back of Card 5</h1>
-            <p>Terms and conditions for card 5.</p>
-            <button>Submit</button>
+            <h1>Barcode</h1>
+            <svg id="barcode5"></svg>
           </div>
         </div>
       </div>
@@ -189,9 +81,8 @@
             <p>Additional information for card 5.</p>
           </div>
           <div class="theback">
-            <h1>Back of Card 5</h1>
-            <p>Terms and conditions for card 5.</p>
-            <button>Submit</button>
+            <h1>Barcode</h1>
+            <svg id="barcode6"></svg>
           </div>
         </div>
       </div>
