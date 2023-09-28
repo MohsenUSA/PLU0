@@ -4,75 +4,92 @@ body {
   flex-direction: column; 
 }
 
+.nav-item {
+  flex-basis: auto;
+}
+
+.navbar {
+  background-color: #fff; 
+}
+
+.nav-link {
+  padding: .5rem 1rem;
+}
+
+.container-fluid {
+  padding-left: 5px;
+  padding-right: 5px; 
+}
+
 .card-container {
-  flex: 1;
   display: flex;
   flex-wrap: wrap;
   justify-content: center;
+  margin: 0 auto;
 }
 
-      .card {
-        position: relative;
-        min-width: 250px;
-        width: calc(33% - 20px);
-        max-width: 300px;
-        height: 320px;
-        background: none;
-        border-radius: 10px;
-        margin: 10px;
-        transform-style: preserve-3d;
-        transition: all 0.8s ease;
-      }
+.card {
+  position: relative;
+  min-width: 250px;
+  width: calc(33% - 20px);
+  max-width: 100px;
+  height: 320px;
+  background: none;
+  border-radius: 10px;
+  margin: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
 
-      .card #thecard {
-        position: relative;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        transform-style: preserve-3d;
-        transition: all 0.8s ease;
-      }
+.card #thecard {
+  position: relative;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  transform-style: preserve-3d;
+  transition: all 0.8s ease;
+}
 
-      .card .flipper {
-        transform: rotateY(180deg);
-      }
+.card .flipper {
+  transform: rotateY(180deg);
+}
 
-      .card .thefront,
-      .card .theback {
-        position: absolute;
-        top: 0;
-        left: 0;
-        width: 100%;
-        height: 100%;
-        border-radius: 10px;
-        backface-visibility: hidden;
-        overflow: hidden;
-      }
+.card .thefront,
+.card .theback {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  border-radius: 10px;
+  backface-visibility: hidden;
+  overflow: hidden;
+}
 
-      .card .thefront {
-        background: #ffc728;
-        color: #000;
-      }
+.card .thefront {
+  background: #ffc728;
+  color: #000;
+}
 
-      .card .theback {
-        background: #fafafa;
-        color: #333;
-        text-align: center;
-        transform: rotateY(180deg);
-      }
+.card .theback {
+  background: #fafafa;
+  color: #333;
+  text-align: center;
+  transform: rotateY(180deg);
+}
 
-      .card .thefront h1,
-      .card .theback h1,
-      .card .thefront p,
-      .card .theback p {
-        font-family: 'zilla slab', sans-serif;
-        padding: 10px 20px;
-        text-align: center;
-      }
+.card .thefront h1,
+.card .theback h1,
+.card .thefront p,
+.card .theback p {
+  font-family: 'zilla slab', sans-serif;
+  padding: 10px 20px;
+  text-align: center;
+}
 
-      /* Default Styles */
+/* Default Styles */
 .card {
   flex-basis: 300px;
   max-width: 300px; 
