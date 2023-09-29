@@ -244,32 +244,34 @@
   <div class="tab-pane" id="messages" role="tabpanel" aria-labelledby="messages-tab" tabindex="0">
   
     <br>
-    <form class="row row-cols-lg-auto g-3 align-items-center justify-content-center">
-        <div class="col-12">
-          <label class="visually-hidden" for="inlineFormInputGroupUsername">Input</label>
-          <div class="input-group">
-            <div class="input-group-text">#</div>
-            <input type="text" class="text-uppercase" class="form-control" id="text-uppercase" placeholder="Type your code">
-          </div>
-        </div>
-      
-        <div class="col-12">
-          <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
-          <select class="form-select" id="inlineFormSelectPref">
-            <option value="barcode">Barcode</option>
-            <option value="qr">QR Code</option>
-         </select>        
-        </div>        
+    <div class="col-12 d-flex justify-content-center">
+        <form class="row row-cols-lg-auto g-3 align-items-center" id="barcodeForm">
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormInputGroupUsername">Input</label>
+                <div class="input-group">
+                    <div class="input-group-text">#</div>
+                    <input type="text" class="text-uppercase form-control" id="text-uppercase" placeholder="Type your code">
+                </div>
+            </div>
+          
+            <div class="col-12">
+                <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
+                <select class="form-select" id="inlineFormSelectPref">
+                    <option value="barcode">Barcode</option>
+                    <option value="qr">QR Code</option>
+                </select>        
+            </div>
+    
+            <div class="col-12 text-center"> <!-- Center the button -->
+                <button type="submit" class="btn btn-outline-success" id="btn_generate">Generate</button>
+            </div>
+        </form>
+    </div>
+    
 
-        </div>
-        <br>
 
-        <div class="col-12">
-            <button type="submit" class="btn btn-outline-success" id="btn_generate">Generate</button>
-            <br><br>
-            <div id="codeContainer"></div>
-        </div>
-        
+    <br><br>
+            <div class="codeContainer" id="codeContainer"></div>
         
 
         <script type="text/javascript">
