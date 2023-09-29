@@ -112,6 +112,17 @@ body {
   max-width: 300px; 
 }
 
+svg {
+  width: 200px; /* Adjust this value to make it bigger */
+  height: auto; /* This maintains the aspect ratio */
+}
+
+#generatedBarcodeSVG {
+  width: 350px; /* Adjust this value to make it bigger */
+  height: auto; /* This maintains the aspect ratio */
+}
+
+
 /* Tablet Styles */
 @media (max-width: 1000px) {
   .card {

@@ -287,6 +287,7 @@
     if (type === "barcode") {
         var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
         JsBarcode(svg, text);
+        svg.setAttribute('id', 'generatedBarcodeSVG'); // Set the ID
         codeContainer.appendChild(svg);
     } else if (type === "qr") {
         var qr = new QRious({
