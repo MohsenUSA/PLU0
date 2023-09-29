@@ -10,7 +10,7 @@ script.onload = function() {
   JsBarcode("#barcode1", "94041");
   JsBarcode("#barcode2", "4044");
   JsBarcode("#barcode3", "15038");
-  JsBarcode("#barcode4", "4225");
+  JsBarcode("#barcode4", "TBA308773732023");
   JsBarcode("#barcode5", "049000551051");
   JsBarcode("#barcode6", "770118709026");
 
@@ -18,3 +18,21 @@ script.onload = function() {
 
 // Append the script element to the document
 document.head.appendChild(script);
+
+
+// // Scroll up function
+window.addEventListener('scroll', function() {
+  var goTopButton = document.getElementById('goTop');
+  if (window.scrollY > 100) {
+      goTopButton.classList.add('visible');
+  } else {
+      goTopButton.classList.remove('visible');
+  }
+});
+
+document.getElementById('goTop').addEventListener('click', function(event) {
+  event.preventDefault();
+  document.querySelector('body').scrollIntoView({
+      behavior: 'smooth'
+  });
+});
