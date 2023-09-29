@@ -69,7 +69,7 @@ body {
 }
 
 .card .thefront {
-  background: #ffc728;
+  background: #90ff28;
   color: #000;
 }
 
@@ -81,7 +81,17 @@ body {
 }
 
 .card .thefront h1,
+.card .thefront h2,
+.card .thefront h3,
+.card .thefront h4,
+.card .thefront h5,
+.card .thefront h6,
 .card .theback h1,
+.card .theback h2,
+.card .theback h3,
+.card .theback h4,
+.card .theback h5,
+.card .theback h6,
 .card .thefront p,
 .card .theback p {
   font-family: 'zilla slab', sans-serif;
