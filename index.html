@@ -263,28 +263,39 @@
 
         </div>
         <br>
+
         <div class="col-12">
-          <button type="submit" class="btn btn-outline-success" id="btn_generate">Generate</button>
-          <br><br>
-          <svg id="gbarcode"></svg>
+            <button type="submit" class="btn btn-outline-success" id="btn_generate">Generate</button>
+            <br><br>
+            <div id="codeContainer"></div>
+        </div>
+        
+        
 
-          <script type="text/javascript">
-            document.getElementById("btn_generate").addEventListener('click', function(event) {
-            event.preventDefault(); // Prevent form submission
+        <script type="text/javascript">
+        document.getElementById("btn_generate").addEventListener('click', function(event) {
+    event.preventDefault(); // Prevent form submission
 
-            var text = document.getElementById("text-uppercase").value;
-            var type = document.getElementById("inlineFormSelectPref").value;
+    var text = document.getElementById("text-uppercase").value;
+    var type = document.getElementById("inlineFormSelectPref").value;
 
-            if (type === "barcode") {
-                JsBarcode("#gbarcode", text);
-            } else if (type === "qr") {
-                var qr = new QRious({
-                    element: document.getElementById("gbarcode"),
-                    value: text,
-                    size: 300,
-                });
-            }
+    var codeContainer = document.getElementById("codeContainer");
+    codeContainer.innerHTML = ''; // Clear any previous code
+
+    if (type === "barcode") {
+        var svg = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+        JsBarcode(svg, text);
+        codeContainer.appendChild(svg);
+    } else if (type === "qr") {
+        var qr = new QRious({
+            value: text,
+            size: 150,
         });
+        var qrImage = document.createElement('img');
+        qrImage.src = qr.toDataURL();
+        codeContainer.appendChild(qrImage);
+    }
+});
 
 
           </script>
