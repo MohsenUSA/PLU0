@@ -20,7 +20,7 @@ script.onload = function() {
 document.head.appendChild(script);
 
 
-// // Scroll up function
+// Scroll up function
 window.addEventListener('scroll', function() {
   var goTopButton = document.getElementById('goTop');
   if (window.scrollY > 100) {
@@ -36,3 +36,23 @@ document.getElementById('goTop').addEventListener('click', function(event) {
       behavior: 'smooth'
   });
 });
+
+// Search
+document.getElementById('searchInput').addEventListener('input', function() {
+  var searchTerm = this.value.toLowerCase();
+  var elementsToSearch = document.querySelectorAll('.card h1, .card h2, .card h3, .card h4, .card h5, .card h6, .card p');
+
+  elementsToSearch.forEach(function(element) {
+      var textContent = element.textContent.toLowerCase();
+      var elementParent = element.closest('.card'); 
+
+      if (textContent.includes(searchTerm)) {
+          elementParent.style.display = 'block';
+      } else {
+          elementParent.style.display = 'none';
+      }
+  });
+});
+
+
+// barcode generator

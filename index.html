@@ -10,6 +10,12 @@
     <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha384-oBqDVmMzZIa17zNlGoKs5lVZklKzeZihrM6yWj4F/BZBh0iPztd6h6MU8su3II1hj" crossorigin="anonymous"></script>
 
     <title>Product Look Up</title>
+
+    <script>
+        function myFlipFunction(card) {
+            card.querySelector("#thecard").classList.toggle("flipper");
+        }
+    </script>
 </head>
 
 <body>
@@ -20,7 +26,7 @@
     <nav class="navbar" style="background-color: #e3f2fd;">
         <div class="container-fluid justify-content-center">
             <form class="d-flex" role="search">
-                <input class="form-control me-2" type="search" placeholder="Search" aria-label="Search">
+                <input class="form-control me-2" type="search" id="searchInput" placeholder="Search" aria-label="Search">
                 <button class="btn btn-outline-success" type="submit">Search</button>
             </form>
         </div>
@@ -296,7 +302,7 @@
     } else if (type === "qr") {
         var qr = new QRious({
             value: text,
-            size: 150,
+            size: 250,
         });
         var qrImage = document.createElement('img');
         qrImage.src = qr.toDataURL();
@@ -315,16 +321,7 @@
     </nav>
 
 
-
-    <script>
-        function myFlipFunction(card) {
-            card.querySelector("#thecard").classList.toggle("flipper");
-        }
-    </script>
-
     <a href="#" id="goTop" class="hidden">Top</a>
-
-
 
 
 </body>
