@@ -4,7 +4,8 @@
     <meta charset="utf-8" name="viewport" content="width=device-width, initial-scale=1">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
     <link rel="stylesheet" href="./styles.css">
-    <script type="javascript" scr="./JsBarcode.all.min.js"></script>
+    <script type="text/javascript" src="./JsBarcode.all.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/gh/neocotic/qrious/dist/qrious.min.js"></script>
     <title>Product Look Up</title>
 </head>
 
@@ -252,14 +253,14 @@
           </div>
         </div>
       
-        <!-- <div class="col-12">
+        <div class="col-12">
           <label class="visually-hidden" for="inlineFormSelectPref">Preference</label>
           <select class="form-select" id="inlineFormSelectPref">
-            <option selected>Barcode Type</option>
-            <option value="2d">2d</option>
-            <option value="qr">QR</option>
-          </select>
-        </div> -->
+            <option value="barcode">Barcode</option>
+            <option value="qr">QR Code</option>
+         </select>        
+        </div>        
+
         </div>
         <br>
         <div class="col-12">
@@ -268,109 +269,29 @@
           <svg id="gbarcode"></svg>
 
           <script type="text/javascript">
-            document.getElementById("btn_generate").addEventListener('click', function() {
-                var text = document.getElementById("text_input").value;
+            document.getElementById("btn_generate").addEventListener('click', function(event) {
+            event.preventDefault(); // Prevent form submission
 
-                JsBarcode("#barcode", text);
-            });
+            var text = document.getElementById("text-uppercase").value;
+            var type = document.getElementById("inlineFormSelectPref").value;
+
+            if (type === "barcode") {
+                JsBarcode("#gbarcode", text);
+            } else if (type === "qr") {
+                var qr = new QRious({
+                    element: document.getElementById("gbarcode"),
+                    value: text,
+                    size: 300,
+                });
+            }
+        });
+
+
           </script>
         
         
         </div>
       </form>
-    <!--        <div class="container mt-4">
-        <div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 g-4">
-            <div class="col">
-                <div class="card" onclick="myFlipFunction(this)">
-                    <div id="thecard">
-                        <div class="thefront">
-                            <h1>Barcode</h1>
-                            <p>Additional information for card 1.</p>
-                        </div>
-                        <div class="theback">
-                            <h1>Barcode</h1>
-                            <svg id="barcode1"></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" onclick="myFlipFunction(this)">
-                    <div id="thecard">
-                        <div class="thefront">
-                            <h1>Front of Card 2</h1>
-                            <p>Additional information for card 2.</p>
-                        </div>
-                        <div class="theback">
-                            <h1>Barcode</h1>
-                            <svg id="barcode2"></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" onclick="myFlipFunction(this)">
-                    <div id="thecard">
-                        <div class="thefront">
-                            <h1>Front of Card 3</h1>
-                            <p>Additional information for card 3.</p>
-                        </div>
-                        <div class="theback">
-                            <h1>Barcode</h1>
-                            <svg id="barcode3"></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" onclick="myFlipFunction(this)">
-                    <div id="thecard">
-                        <div class="thefront">
-                            <h1>Front of Card 4</h1>
-                            <p>Additional information for card 4.</p>
-                        </div>
-                        <div class="theback">
-                            <h1>Barcode</h1>
-                            <svg id="barcode4"></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" onclick="myFlipFunction(this)">
-                    <div id="thecard">
-                        <div class="thefront">
-                            <h1>Front of Card 5</h1>
-                            <p>Additional information for card 5.</p>
-                        </div>
-                        <div class="theback">
-                            <h1>Barcode</h1>
-                            <svg id="barcode5"></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-
-            <div class="col">
-                <div class="card" onclick="myFlipFunction(this)">
-                    <div id="thecard">
-                        <div class="thefront">
-                            <h1>Front of Card 6</h1>
-                            <p>Additional information for card 6.</p>
-                        </div>
-                        <div class="theback">
-                            <h1>Barcode</h1>
-                            <svg id="barcode6"></svg>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </div> -->
 
   </div>
   

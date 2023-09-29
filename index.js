@@ -18,4 +18,3 @@ script.onload = function() {
 
 // Append the script element to the document
 document.head.appendChild(script);
-
